@@ -1,28 +1,26 @@
 $(document).ready(function(){
 
 	//function to reset all vars to zero and place in document
+	//"strseconds" etc is for putting into doc
+	//"seconds" etc are vars that stay as numbers for calculations
 	function reset (){
-		var milliseconds = "0" + 0;
-		var seconds = "0" + 0;
-		var minutes = "0" + 0;
-		var hours = "0" + 0;
-		$("#seconds").text(seconds);
-		$("#minutes").text(minutes);
-		$("#hours").text(hours);
-		$("#milliseconds").text(milliseconds);
+		var strmilliseconds = "00" + 0;
+		var strseconds = "0" + 0;
+		var strminutes = "0" + 0;
+		var strhours = "0" + 0;
+		var milliseconds = 0;
+		var seconds = 0;
+		var minutes = 0;
+		var hours = 0;
+		$("#seconds").text(strseconds);
+		$("#minutes").text(strminutes);
+		$("#hours").text(strhours);
+		$("#milliseconds").text(strmilliseconds);
 	}
-	
-	// function to count up seconds
-	function secondsCount(){
-		seconds++;
-	}
-
-	setInterval(secondsCount(){
-		$("#seconds").text(seconds);
-	}, 1000);
-
 	// link reset function to reset button
-	$("#reset").click(reset);
+		$("#reset").click(reset);
+		// setInterval()
+
 
 
 
@@ -35,4 +33,20 @@ $(document).ready(function(){
 //on click of stop, timer stops
 //on click of reset, timer resets
 //set clock to zero and timer reset are tied together
+
+//wrap everything in setInterval, use if statements
+//create a loop to check if start or stop is paused
+//in setInterval, put a boolen function that will stop the loop from running
+//same idea to start again
+
+// // function to count up seconds
+// function secondsCount(){
+// 	var seconds = seconds + 1;
+// }
+
+// setInterval(secondsCount(){
+// 	$("#seconds").text(seconds);
+// }, 1000);
+
+// 
 
