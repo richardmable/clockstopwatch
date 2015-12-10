@@ -37,7 +37,7 @@ $(document).ready(function(){
 			minutes = 0;
 			hours + 1;
 		}else {
-			console.log(seconds);
+			console.log(milliseconds);
 		}
 	};
 		
@@ -45,13 +45,8 @@ $(document).ready(function(){
 	//creates a loop telling counter to run every 1/10 of a second until stop button is clicked
 	//intiates upon start button being clicked, use for loops to check for stop button
 	$("#start").click(setInterval(counter, 100));
+	//this is where text output to HTML needs to go
 		//run until stop button clicked
-	
-
-
-
-
-
 
 	});
 
