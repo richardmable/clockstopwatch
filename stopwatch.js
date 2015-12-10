@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
 	//function to reset all vars to zero and place in document
-	//"strseconds" etc is for putting into doc
+	//"strseconds" etc is for putting into doc as the vars become strings with init 0's added
 	//"seconds" etc are vars that stay as numbers for calculations
 	function reset (){
 		var strmilliseconds = "00" + 0;
@@ -17,9 +17,38 @@ $(document).ready(function(){
 		$("#hours").text(strhours);
 		$("#milliseconds").text(strmilliseconds);
 	}
+	//a way to make reset run once page is intially loaded
+
 	// link reset function to reset button
-		$("#reset").click(reset);
-		// setInterval()
+	$("#reset").click(reset);
+
+
+	//function to count up and add seconds and minutes in correct order, display them to page
+	//12/9 11:30PM: this is "working" aka displaying spanid+seconds every 100 ms in console when start clicked
+	function counter(){
+		milliseconds + 100;
+		if (milliseconds == 1000) {
+			milliseconds = 0;
+			seconds + 1;
+		}else if(seconds == 60) {
+			seconds = 0;
+			minutes + 1;
+		}else if(minutes == 60){
+			minutes = 0;
+			hours + 1;
+		}else {
+			console.log(seconds);
+		}
+	};
+		
+	
+	//creates a loop telling counter to run every 1/10 of a second until stop button is clicked
+	//intiates upon start button being clicked, use for loops to check for stop button
+	$("#start").click(setInterval(counter, 100));
+		//run until stop button clicked
+	
+
+
 
 
 
